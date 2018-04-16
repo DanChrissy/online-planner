@@ -1,0 +1,74 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+    <div class = "page">
+        
+        <div class = "top-bar">
+            <span class="home-title">Meal Planner and Recipe System</span>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('logout') }}"><button class="home-button" >Logout</button></a>
+            {% else %}
+                <a href="{{ url_for('login') }}"><button class="home-button" >Login</button></a>
+            {% endif %}
+            
+            <a href="{{ url_for('addRecipe') }}"><button class="home-button" >Add Recipe</button></a>
+            
+            <a href="{{ url_for('addMeal') }}"><button class="home-button" >Add Meal</button></a>
+            
+            <a href="{{ url_for('mealImage') }}"><button class="home-button" >Upload Image</button></a>
+            
+            <a href="{{ url_for('ingredients') }}"><button class="home-button">Search Kitchen</button></a>
+            
+        </div>
+        
+        <h3 id = "page-title">Welcome {{ current_user.username }}</h3><br>
+        
+        <div id = "recipe">
+            <h3 id = "recipe-title">Click to see recently added recipes:</h3><br><br>
+            <!--{% for recipe in recipes %}
+                <ul>
+                    <li class = "item">Recipe Name: {{recipe.name}}</li>
+                    <li class = "item"> Creation Date: {{recipe.date}}</</li>
+                </ul>
+            {% endfor %}-->
+            <div class = "group">
+                
+                <div class = "img-container">
+                    <img src="/static/vegetarian.jpg" alt = "Vegetarian Meals" class = "image"></img>
+                    <div class="middle">
+                        <a class = "text" href = "{{ url_for('individualRecipes') }}">Recipe1</a>
+                    </div>
+                </div>
+                
+                <div class = "img-container">
+                    <img src="/static/vegan.jpg" alt = "Vegan Meals" class = "image"></img>
+                    <div class="middle">
+                        <a class = "text" href = "{{ url_for('individualRecipes') }}">Recipe2</a>
+                    </div>
+                </div>
+                
+                <div class = "img-container">
+                    <img src="/static/frutarian.jpg" alt = "Fruitarian Meals" class = "image"></img>
+                    <div class="middle">
+                        <a class = "text" href = "{{ url_for('individualRecipes') }}">Recipe3</a>
+                    </div>
+                </div>
+                
+                <div class = "img-container">
+                    <img src="/static/meal1.jpg" alt = "Other Recipes" class = "image"></img>
+                    <div class="middle">
+                        <a class = "text" href = "{{ url_for('searchRecipes') }}">Search Recipes</a>
+                    </div>
+                </div>
+        
+            </div>
+           
+        </div>
+        
+       
+    </div>
+
+    
+{% endblock %}
+

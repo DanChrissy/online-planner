@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block main %}
+  
+<div class = "recipe-page">
+    <div class = "top-bar">
+        <span class="home-title">Meal Planner and Recipe System | Recipe Form</span>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}"><button class="home-button" >Logout</button></a>
+        {% else %}
+            <a href="{{ url_for('login') }}"><button class="home-button" >Login</button></a>
+        {% endif %}
+        
+            <a href="{{ url_for('addMeal') }}"><button class="home-button" >Add Meal</button></a>
+            
+            <a href="{{ url_for('ingredients') }}"><button class="home-button" >Search Ingredients</button></a>
+        
+            <a href="{{ url_for('homepage') }}"><button class="home-button" >Home Page</button></a>
+    </div>
+    
+    <div class = "body">
+        <!--<h3 id = "meal-title">Recipe Information</h3>-->
+            <form id = "recipeForm" action="{{ url_for('addRecipe') }}" method="post">
+                 
+                {% include 'flash_messages.html' %}
+                {{ form.csrf_token }}
+                
+                <label class = "fields">Name of Recipe:</label><br>
+                <input class = "fields-area" type="text" name="meal_name"/><br><br>
+                
+                <label class = "fields">Calorie Count in Recipe:</label><br>
+                <input class = "fields-area" type = "text" name = "calories"><br><br>
+                
+                <label class = "fields">Creation Date of Recipe:</label><br>
+                <input class = "fields-area" type="date" name="dob"/><br><br><br>
+                
+                <h4 id = "meal-title">Instuctions</h4>
+                
+                <label class = "fields">Type of Instruction:</label><br>
+                <input type="radio" name="type_instruct" value="prep">Preparation Instructions<br>
+                <input type="radio" name="type_instruct" value="cook">Cooking Instructions<br><br>
+                
+                <label class = "fields">Instruction:</label><br>
+                <textarea name = "instruction"></textarea><br><br>
+                <button type = "submit" name = "submit">Add Instruction</button><br><br>
+                
+                <br><h4 id = "meal-title">Ingredients</h4>
+    
+                <input type="checkbox" name="ingredient" value="Vegan"/><label class = "check-text">Vegan</label><br>
+                <input type="checkbox" name="ingredient" value="Vegetarian"/><label class = "check-text">Vegetarian</label><br>
+                <input type="checkbox" name="ingredient" value="Seafood"/><label class = "check-text">Seafood</label><br>
+                <input type="checkbox" name="ingredient" value="Dairy-Free"/><label class = "check-text">Dairy-Free</label><br><br>
+             
+                
+                <button type="submit" name="submit">Add Recipe</button>
+            </form>
+      
+    </div>
+</div>
+
+  
+{% endblock %}

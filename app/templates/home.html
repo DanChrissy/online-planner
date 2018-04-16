@@ -1,7 +1,23 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1 class="page-header">Lab 5 Starter Code</h1>
-<p class="lead">Use this starter template for Lab 5<br/>
-All you get are these files and mostly barebones HTML/CSS files.</p>
+
+<div class = "top-bar">
+    <span class="home-title">Meal Planner and Recipe System</span>
+    {% if current_user.is_authenticated %}
+        <a href="{{ url_for('logout') }}"><button class="home-button" >Logout</button></a>
+    {% else %}
+        <a href="{{ url_for('login') }}"><button class="home-button" >Login</button></a>
+    {% endif %}
+        
+    <a href="{{ url_for('addAcc') }}"><button class="home-button" >Sign Up</button></a>
+    
+</div>
+    
+<div class = "mid-bar">
+    <img class = "home-img" src="{{url_for('static', filename ="recipe.jpg") }} "></img>
+    <p class = "description" >Catch Phrase</p>
+</div>
+    
+
 {% endblock %}

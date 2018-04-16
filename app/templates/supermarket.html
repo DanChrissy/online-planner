@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block main %}
+  
+<div class = "page">
+    <div class = "top-bar">
+        <span class="home-title">Meal Planner and Recipe System | Breakfast Meal</span>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}"><button class="home-button" >Logout</button></a>
+        {% else %}
+            <a href="{{ url_for('login') }}"><button class="home-button" >Login</button></a>
+        {% endif %}
+        
+        <a href="{{ url_for('recipe') }}"><button class="home-button" >Add Recipe</button></a>
+            
+        <a href="{{ url_for('meals') }}"><button class="home-button" >Add Meal</button></a>
+        
+        <a href="{{ url_for('homepage') }}"><button class="home-button" >Hoome Page</button></a>
+            
+    </div>
+    
+    <div class = "body">
+        <p id = "super-title">These are the ingredients you would need for this meal:</p>
+        
+        <div id = "left-super">
+            <ol>
+                <li class = "super-ing">Ingredient 1</li><br>
+                <li class = "super-ing">Ingredient 1</li><br>
+                <li class = "super-ing">Ingredient 1</li><br>
+                <li class = "super-ing">Ingredient 1</li><br>
+                <li class = "super-ing">Ingredient 1</li><br>
+                <li class = "super-ing">Ingredient 1</li><br>
+                <li class = "super-ing">Ingredient 1</li><br>
+            </ol>
+        </div>
+        
+        <div id = "right-super">
+            <img id = "top-img" src="/static/ingredient1.jpg" alt = "Ingredients 1"></img>
+            <img id = "mid-img" src="/static/ingredient2.jpg" alt = "Ingredients 2"></img><br><br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

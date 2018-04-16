@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class = "page">
+        
+        <div class = "top-bar">
+            <span class="home-title">Meal Planner and Recipe System | Meal</span>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('logout') }}"><button class="home-button" >Logout</button></a>
+            {% else %}
+                <a href="{{ url_for('login') }}"><button class="home-button" >Login</button></a>
+            {% endif %}
+            
+            <a href="{{ url_for('addRecipe') }}"><button class="home-button" >Add Recipe</button></a>
+            
+            <a href="{{ url_for('addMeal') }}"><button class="home-button" >Add Meal</button></a>
+            
+            <a href="{{ url_for('homepage') }}"><button class="home-button" >Home Page</button></a>
+        </div>
+        
+        <div class = "body">
+            <h2 id = "mealTitle">Type of Meal Name</h2>
+        
+        <div id = "left">
+            <img id = "left-img" src="/static/vege1.jpg" alt = "Pastry Dish"></img>
+        </div>
+        
+        <div id = "mid">
+            
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal1</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal2</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal3</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal4</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal5</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal6</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal7</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal8</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal9</a><br><br>
+            <a class = "recipeLink" href = "{{ url_for('viewMeals') }}">Meal10</a><br><br>
+        </div>
+        
+        <div id = "right">
+            <img id = "right-img" src="/static/vege2.jpg" alt = "People Eating"></img>
+        </div>
+        
+        </div>
+    </div>
+
+{% endblock %}

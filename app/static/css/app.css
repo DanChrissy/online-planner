@@ -1,3 +1,525 @@
 body {
-    padding-top: 5rem;
+    background: white;
+    padding-top: 2em;
+}
+
+.page{
+    border: 1px solid black;
+    position:relative;
+    margin:auto;
+    width:1050px;
+    padding-bottom: 10px;
+}
+
+.fields{
+    margin-left: 10px;
+    font-family: Sans-Serif;
+    color: #e91640;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.field-area{
+    height:30px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.body{
+    margin-bottom:10px;
+    margin-top: 10px;
+}
+
+input[type = "text"], input[type = "password"], input[type = "date"]{
+    width: 250px;
+    height:30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin-left:10px;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    
+}
+
+.check-text{
+    font-family: Georgia;
+    margin-left: 2px;
+}
+
+.top-bar{
+    background-color: #eb2d53;
+    padding: 15px;
+    /*margin-bottom: 10px;*/
+}
+
+
+span{
+    font-family: Georgia;
+    font-size: 25px;
+    display: inline;
+    color: white;
+}
+
+button{
+    height: 30px;
+    color: #e91640;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-bottom:5px;
+}
+
+.home-button{
+    border:none;
+    background-color: #eb2d53;
+    float: right;
+    padding: 2px;
+    margin-left: 10px;
+    color: white;
+}
+
+.home-button:hover{
+    border: 1px solid #eb2d53;
+    background-color: white;
+    color:black;
+}
+
+/*.home-button:active {
+  transform: translateY(4px);
+}*/
+
+.home-button:focus {
+    outline:0;
+}
+
+/*Home Page*/
+
+.pic-area{
+    margin-left: 15px;
+}
+.description{
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-align: center;
+}
+
+.home-img{
+    display: block;
+    margin: auto;
+    position: relative;
+    height: 400px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+/*Log In*/
+h2{
+    text-align: center;
+    font-family: Georgia;
+    color: black;
+}
+
+/*Homepage*/
+
+.group{
+    position: relative;
+    margin: auto;
+    width:900px;
+}
+
+.img-container{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    display: inline-block;
+    width: 200px;
+    margin-left: 10px;
+    border-radius: 5%;
+    padding-bottom: 20px;
+}
+
+.image {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  
+}
+
+.middle {
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.text:hover{
+    color: #eb2d53;
+    text-decoration: none;
+}
+
+#page-title{
+    text-align: center;
+    font-family: "Book Antiqua";
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: bold;
+    color: black;
+}
+
+#recipe-title, #meals-title{
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 30px;
+    display: inline;
+    color: #6918b4;
+}
+
+#meal-title{
+    font-family: cursive;
+    margin-left: 15px;
+}
+
+/*Plan Meals*/
+
+#title{
+    margin-top: 5px;
+    font-family: cursive;
+    margin-left: 15px;
+}
+
+/*Add Recipe*/
+
+textarea{
+    margin-left: 10px;
+    width: 200px;
+    height: 100px;
+}
+
+.recipe-page{
+    border: 1px solid black;
+    position:relative;
+    margin:auto;
+    width:1000px;
+    padding-bottom: 10px;
+}
+
+#recipeForm{
+    margin-left: 30px;
+}
+
+/*Add Account*/
+
+#user-page{
+    margin: auto;
+    position: relative;
+    width:500px;
+    border: 2px solid black;
+    padding-bottom: 10px ; 
+    background-color: #fff5e6;
+}
+
+.login,.Accinfo,button{
+    margin-left:10px;
+}
+
+h1{
+    font-family: Georgia;
+    text-align: center;
+    color: #e91640;
+    text-shadow: 0px 3px white;
+}
+
+.intro{
+    margin-top:5px;
+    font: italic bold 16px/30px Georgia, serif;
+    text-align:center; 
+}
+
+
+/*Add Profile*/
+
+#profile-form{
+    margin-left: 10px;
+    border: 1px solid black;
+    position:relative;
+    margin:auto;
+    width:500px;
+    padding-bottom: 10px;
+    background-color: #fff5e6;
+}
+
+input[name = "weight"]{
+    width: 60px;
+}
+
+select, input[type = "radio"]{
+    margin-left: 10px;
+}
+
+/*Uploads*/
+
+.upload-body{
+    position: relative;
+    margin: auto;
+    width: 800px;
+}
+
+.upload-container {
+    position: relative;
+    width: 200px;
+    display:inline-block;
+    margin-left: 10px;
+}
+
+.img-upload {
+  opacity: 1;
+  display: block;
+  width: 200px;
+  height: 200px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.upload-mid {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.img-upload:hover{
+  opacity: 0.3;
+}
+
+.upload-container:hover .upload-mid {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 15px 15px;
+}
+
+#upload-title{
+    font-family: Serif;
+    font-style: italic;
+    font-weight:bold;
+}
+
+/*View Meals*/
+
+#mealTitle{
+    margin-top: 10px;
+}
+
+#left, #right, #mid{
+    display: inline-block;
+    overflow: auto;
+    margin-top: 10px;
+}
+
+#mid{
+   width: 200px; 
+   height: 320px;
+   margin-left: 50px;
+   text-align: center;
+   
+}
+
+#left, #right{
+    width: 300px;
+    height: 320px;
+    margin-left: 55px;
+}
+
+#left-img, #right-img{
+    width: 250px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 5%;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+#left-img{
+    -ms-transform: rotate(-8deg); /* IE 9 */
+    -webkit-transform: rotate(-8deg); /* Safari 3-8 */
+    transform: rotate(-8deg);
+}
+
+#right-img{
+    -ms-transform: rotate(8deg); /* IE 9 */
+    -webkit-transform: rotate(8deg); /* Safari 3-8 */
+    transform: rotate(8deg);
+}
+
+.recipeLink{
+    text-decoration: none;
+    color: #39e600;
+    font-weight: bold;
+}
+
+.recipeLink:hover{
+    color: red;
+    text-decoration: none;
+}
+
+/*mealRecipe*/
+
+#mR{
+    border-bottom: 1px solid black;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#mR-title{
+    font-family: Serif;
+    font-style: italic;
+}
+
+#mR-ing, #mR-ins{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#mR-ing{
+    overflow: auto;
+    width: 200px;
+    margin-left: 50px;
+    height: auto;
+    vertical-align: top;
+}
+
+#mR-ins{
+    width: 500px;
+    overflow: auto;
+    margin-left: 30px;
+}
+
+.ins-title{
+    font-family: "Book Antiqua";
+}
+
+.recipeIng{
+    margin-left: 35px;
+    font-weight: bold;
+}
+
+.recipeIns{
+    font-family: "Times New Roman";
+}
+
+/*Ingredients*/
+
+.ingLink{
+    font-family: "Times New Roman";
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.ingLink:hover{
+    color: red;
+    text-decoration: none;
+}
+
+#available-unavailble{
+    margin-top: 10px;
+}
+
+/*Supermarket*/
+
+#super-title{
+    margin-left: 10px;
+    font-family: Serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#left-super, #right-super{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#left-super{
+    margin-left: 20px;
+    width: 300px;
+    overflow: auto;
+}
+
+#right-super{
+    width: 600px;
+}
+
+.super-ing{
+    font-family: "Times New Roman";
+    margin-left: 25px;
+}
+
+#top-img, #mid-img{
+    width: 250px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 5%;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+#top-img{
+    -ms-transform: rotate(-8deg); /* IE 9 */
+    -webkit-transform: rotate(-8deg); /* Safari 3-8 */
+    transform: rotate(-8deg);
+    margin-left: 20px;
+}
+
+#mid-img{
+    -ms-transform: rotate(8deg); /* IE 9 */
+    -webkit-transform: rotate(8deg); /* Safari 3-8 */
+    transform: rotate(8deg);
+     margin-left: 50px;
+}
+
+/*Search Recipe*/
+
+#showRecipe{
+    margin-top: 15px;
+}
+
+/*Upload Image */
+
+.upload-page{
+    border: 1px solid black;
+    position:relative;
+    margin:auto;
+    width:750px;
+    padding-bottom: 10px;
+}
+
+input[type = "file"]{
+    margin-left: 10px;
+}
+
+#upload-notice{
+    margin-left: 20px;
 }

@@ -1,20 +1,31 @@
 {% extends "base.html" %}
 
 {% block main %}
-  <div class="login-form center-block">
-    <h2>Please Log in</h2>
-    {% include 'flash_messages.html' %}
-    <form action="{{ url_for('login') }}" method="post">
-      {{ form.csrf_token }}
-      <div class="form-group">
-        {{ form.username.label }}
-        {{ form.username(class='form-control', placeholder="Enter your username") }}
-      </div>
-      <div class="form-group">
-        {{ form.password.label }}
-        {{ form.password(class='form-control') }}
-      </div>
-      <button type="submit" name="submit" class="btn btn-primary btn-block">Log in</button>
-    </form>
+  
+  <div class = "page">
+    
+    <div class = "top-bar">
+      <span class="home-title">Meal Planner and Recipe System | Log In Form</span>
+    </div>
+    
+    <div class = "body">
+      <h2>Complete Login Form</h2>
+      
+      {% include 'flash_messages.html' %}
+      
+      <form action="{{ url_for('login') }}" method="post">
+        {{ form.csrf_token }}
+        
+         <label class = "fields">Username:</label><br>
+         <input class = "fields-area" type="text" name="username" placeholder = "Enter your username"/><br><br>
+         
+         <label class = "fields">Password:</label><br>
+         <input class = "fields-area" type="password" name="password" placeholder = "Enter your password"/><br><br>
+        
+        <button type="submit" name="submit">Log in</button>
+      </form>
+    </div>
   </div>
+
+  
 {% endblock %}

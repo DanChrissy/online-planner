@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class = "upload-page">
+        
+        <div class = "top-bar">
+            <span class="home-title">Meal Planner and Recipe System</span>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('logout') }}"><button class="home-button" >Logout</button></a>
+            {% else %}
+                <a href="{{ url_for('login') }}"><button class="home-button" >Login</button></a>
+            {% endif %}
+            
+            <a href="{{ url_for('addRecipe') }}"><button class="home-button" >Add Recipe</button></a>
+            
+            <a href="{{ url_for('addMeal') }}"><button class="home-button" >Add Meal</button></a>
+            
+            <a href="{{ url_for('homepage') }}"><button class="home-button" >Home Page</button></a>
+            
+        </div>
+        
+        <div class = body>
+            
+            <label class="fields">Upload Image of Meal</label><br>
+            <input class = "field-area" type="file" name="mealImage"/><br><br>
+            
+            <div class = "success">
+                <p id = "upload-notice">Image was uploaded Successfully/ Unsuccessfully</p>
+            </div>
+            
+            
+            <a href="{{ url_for('uploads') }}"><button class="home-button" >View Uploaded Meals</button></a>
+        </div>
+    
+    </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block main %}
+  
+  <h1>Profile Completion Form</h1>
+  <div>
+  
+    <form id = "profile-form" action="{{ url_for('addProfile') }}" method="post">
+      {% include 'flash_messages.html' %}
+      {{ form.csrf_token }}
+     
+      <label class = "fields">Age:</label><br>
+      <input class = "field-area" type="text" name="age"/><br><br>
+      
+      <label class = "fields">Allergies:</label><br>
+      <textarea class = "allergies" placeholder = "Please state all allergies..."></textarea><br><br>
+      
+      <label class = "fields">Illnesses:</label><br>
+      <textarea class = "illnesses" placeholder = "Please state all illnesses..."></textarea><br><br>
+      
+      <label class = "fields">Weight:</label><br>
+      <input class = "field-area" type="text" name="weight"/>lbs<br><br>
+      
+      <label class = "fields">Weight Goal: How much do you want to lose?</label><br>
+      <select>
+        <option value="disabled" disabled>Select Goal</option>
+        <option value="20">20 lbs</option>
+        <option value="40">40 lbs</option>
+        <option value="60">60 lbs</option>
+        <option value="80">80 lbs</option>
+        <option value="100">100 lbs</option>
+      </select><br><br>
+      
+      <label class = "fields">Desired Time: How many weeks to lose it?</label><br>
+      <select>
+        <option value="disabled" disabled>Select Goal</option>
+        <option value="2">2 weeks</option>
+        <option value="4">4 weeks</option>
+        <option value="12">12 weeks</option>
+        <option value="24">24 weeks</option>
+        <option value="52">52 weeks</option>
+      </select><br><br>
+      
+      <label class = "fields">Gender:</label><br>
+      <input type="radio" name="gender" value="male"> Male<br>
+      <input type="radio" name="gender" value="female"> Female<br><br>
+      
+      <label class = "fields">Food Preference:</label><br>
+      <input class = "fields-area" type="text" name="preference"><br><br>
+      
+      <label class = "fields">Calorie Preference:</label><br>
+      <input class = "fields-area" type="text" name="calPref"><br><br>
+      
+      <button type="submit" name="submit">Add Profile</button>
+  
+    </form>
+    
+  </div>
+  
+  
+{% endblock %}

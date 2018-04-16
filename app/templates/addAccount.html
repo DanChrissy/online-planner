@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main %}
+  
+  <h1>Sign Up Form</h1>
+  
+  <div>
+    <form  id = "user-page" action="{{ url_for('addAcc') }}" method="post">
+      
+      <div class="login">
+  
+        {% include 'flash_messages.html' %}
+        {{ form.csrf_token }}
+        
+        <label class = "fields">Username:</label><br>
+        <input class = "field-area" type="text" name="username"/><br><br>
+        
+        <label class = "fields">Password:</label><br>
+        <input class = "field-area" type="password" name="password"/><br><br>
+      </div>
+      
+      <div class = "Accinfo">
+        
+        <label class = "fields">First Name:</label><br>
+        <input class = "field-area" type="text" name="firstname"/><br><br>
+        
+        <label class = "fields">Last Name</label><br>
+        <input class = "field-area" type="text" name="lastname"/><br><br>
+      
+        <label class = "fields">Email Address:</label><br>
+        <input class = "field-area" type = 'text' name = 'email' placeholder = 'e.g. jdoe@example.com'><br><br>
+        
+        <label class = "fields">Date of Birth:</label><br>
+        <input class = "fields-area" type="date" name="dob"/><br><br>
+        
+      </div>
+      <br>
+      
+      <button type="submit" name="submit">Add Account</button>
+  
+    </form>
+    
+  </div>
+  
+  
+{% endblock %}

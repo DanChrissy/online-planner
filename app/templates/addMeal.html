@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block main %}
+  
+<div class = "page">
+    <div class = "top-bar">
+        <span class="home-title">Meal Planner and Recipe System | Add Meal</span>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}"><button class="home-button" >Logout</button></a>
+        {% else %}
+            <a href="{{ url_for('login') }}"><button class="home-button" >Login</button></a>
+        {% endif %}
+            
+            <a href="{{ url_for('mealImage') }}"><button class="home-button" >Upload Meal Photo</button></a>
+            
+            <a href="{{ url_for('homepage') }}"><button class="home-button" >Home Page</button></a>
+    </div>
+    
+    <div class = "body">
+        <!--<h3 id = "meal-title">Recipe Information</h3>-->
+            <form action="{{ url_for('addMeal') }}" method="post">
+                 
+                {% include 'flash_messages.html' %}
+                {{ form.csrf_token }}
+                
+                <label class = "fields">Name of Meal:</label><br>
+                <input class = "fields-area" type="text" name="meal_name"/><br><br>
+                
+                <label class = "fields">Date of Meal:</label><br>
+                <input class = "fields-area" type="date" name="dob"/><br><br>
+                
+                <label class = "fields">Time of Meal:</label><br>
+                <input type="radio" name="meal_time" value="breakfast">Breakfast<br>
+                <input type="radio" name="meal_time" value="lunch">Lunch<br>
+                <input type="radio" name="meal_time" value="dinner">Dinner<br><br>
+                
+                <label class = "fields">Type of Meal:</label><br>
+                <input type="radio" name="type_meal" value="male"> Vegetarian<br>
+                <input type="radio" name="type_meal" value="female"> Vegan<br>
+                <input type="radio" name="type_meal" value="male"> Fruitarian<br>
+                <input type="radio" name="type_meal" value="female"> Other<br><br>
+                
+                <label class = "fields">Search Recipe:</label><br>
+                <input class = "fields-area" type="text" name="meal_name"/>
+                
+                <button type="submit" name="submit">Add Recipe</button>
+                
+                <div id = "addRecipes">
+                    <ul>
+                        <li>Recipe 1</li>
+                        <li>Recipe 1</li>
+                        <li>Recipe 1</li>
+                        <li>Recipe 1</li>
+                        <li>Recipe 1</li>
+                    </ul>
+                </div>
+                
+            
+                <button type="submit" name="submit">Add Meal</button>
+                
+            </form>
+      
+    </div>
+</div>
+
+  
+{% endblock %}
